@@ -1,4 +1,5 @@
 import './header.css'
+import Button from '../../assets/Button.svg'
 
 function header(props) {
 return (
@@ -7,6 +8,7 @@ return (
             {props.texts.map((text, index) => (
                     <p className='itemHead' key={index}>{text}</p>
             ))}
+            <img src={Button} alt='Button' className='button'/>
         </div>
     </>
 )

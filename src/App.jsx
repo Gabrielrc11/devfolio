@@ -5,7 +5,7 @@ function App() {
   return (
     <div className='App'>
       <div>
-        <Header texts={["Home", "Sobre mim", "Experiências", "Habilidades", "Formação", "Projetos"]}/>
+        <Header texts={["Sobre mim", "Experiências", "Habilidades", "Formação", "Projetos"]}/>
       </div>
     </div>
   )
