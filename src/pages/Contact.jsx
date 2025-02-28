@@ -12,7 +12,6 @@ import {
   Email,
   LinkedIn,
   GitHub,
-  WhatsApp,
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
@@ -54,7 +53,6 @@ const Contact = () => {
       subject: '',
       message: ''
     });
-    console.log('Form data:', formData);
   };
 
   const socialLinks = [

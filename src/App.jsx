@@ -1,7 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import { Box, CircularProgress, CssBaseline } from '@mui/material';
+import { CircularProgress, CssBaseline } from '@mui/material';
 import Navbar from './components/Navbar';
 
 const Home = lazy(() => import('./pages/Home'));
@@ -10,14 +10,9 @@ const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 
 const LoadingFallback = () => (
-  <Box
-    display="flex"
-    justifyContent="center"
-    alignItems="center"
-    minHeight="100vh"
-  >
+  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
     <CircularProgress />
-  </Box>
+  </div>
 );
 
 function App() {
