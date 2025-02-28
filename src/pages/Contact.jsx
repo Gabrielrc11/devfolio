@@ -16,6 +16,12 @@ import {
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
+const animationProps = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.5 }
+};
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -78,9 +84,9 @@ const Contact = () => {
       <Grid container spacing={6}>
         <Grid item xs={12} md={6}>
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            {...animationProps}
+            initial={{ ...animationProps.initial, x: -50 }}
+            animate={{ ...animationProps.animate, x: 0 }}
           >
             <Typography variant="h3" gutterBottom>
               Entre em Contato
@@ -154,9 +160,9 @@ const Contact = () => {
 
         <Grid item xs={12} md={6}>
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            {...animationProps}
+            initial={{ ...animationProps.initial, x: 50 }}
+            animate={{ ...animationProps.animate, x: 0 }}
           >
             <Typography variant="h4" gutterBottom>
               Redes Sociais

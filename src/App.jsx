@@ -1,5 +1,4 @@
-import { BrowserRouter } from 'react-router-dom';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { CircularProgress, CssBaseline } from '@mui/material';
 import Navbar from './components/Navbar';
