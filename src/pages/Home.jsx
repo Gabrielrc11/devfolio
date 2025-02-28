@@ -2,6 +2,7 @@ import { Box, Container, Typography, Button, Grid, IconButton } from '@mui/mater
 import { motion } from 'framer-motion';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import profileImage from '../assets/profile.jpg';
 
 const Home = () => {
   return (
@@ -96,7 +97,7 @@ const Home = () => {
             >
               <Box
                 component="img"
-                src="./src/assets/profile.jpg"
+                src={profileImage}
                 alt="Desenvolvedor"
                 sx={{
                   width: '100%',
