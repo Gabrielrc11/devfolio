@@ -2,9 +2,13 @@ import { Box, Container, Typography, Button, Grid, IconButton } from '@mui/mater
 import { motion } from 'framer-motion';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { useNavigate } from 'react-router-dom';
+import { ROUTES } from '../constants/routes';
 import profileImage from '../assets/profile.jpg';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <Grid
@@ -46,14 +50,14 @@ const Home = () => {
                 variant="contained"
                 size="large"
                 sx={{ mr: 2 }}
-                href="/projetos"
+                onClick={() => navigate(ROUTES.PROJECTS)}
               >
                 Ver Projetos
               </Button>
               <Button
                 variant="outlined"
                 size="large"
-                href="/contato"
+                onClick={() => navigate(ROUTES.CONTACT)}
               >
                 Contato
               </Button>
