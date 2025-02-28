@@ -57,6 +57,14 @@ const Home = () => {
               <Button
                 variant="outlined"
                 size="large"
+                sx={{ mr: 2 }}
+                onClick={() => navigate(ROUTES.ABOUT)}
+              >
+                Sobre
+              </Button>
+              <Button
+                variant="outlined"
+                size="large"
                 onClick={() => navigate(ROUTES.CONTACT)}
               >
                 Contato
