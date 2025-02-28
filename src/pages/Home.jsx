@@ -1,5 +1,7 @@
-import { Box, Container, Typography, Button, Grid } from '@mui/material';
+import { Box, Container, Typography, Button, Grid, IconButton } from '@mui/material';
 import { motion } from 'framer-motion';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Home = () => {
   return (
@@ -36,7 +38,7 @@ const Home = () => {
             </Typography>
             <Typography variant="body1" paragraph>
               Transformando ideias em soluções digitais inovadoras. Especializado em
-              desenvolvimento web com React, Laravel e tecnologias modernas.
+              desenvolvimento WEB com React, Laravel e tecnologias modernas.
             </Typography>
             <Box sx={{ mt: 4 }}>
               <Button
@@ -54,6 +56,26 @@ const Home = () => {
               >
                 Contato
               </Button>
+              <Box sx={{ mt: 2, display: 'flex', gap: 1 }}>
+                <IconButton
+                  href="https://www.linkedin.com/in/gabriel-carvalho-7911a225b/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  color="primary"
+                  size="large"
+                >
+                  <LinkedInIcon />
+                </IconButton>
+                <IconButton
+                  href="https://github.com/Gabrielrc11"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  color="primary"
+                  size="large"
+                >
+                  <GitHubIcon />
+                </IconButton>
+              </Box>
             </Box>
           </motion.div>
         </Grid>
