@@ -4,18 +4,22 @@ const getTheme = (mode) => createTheme({
   palette: {
     mode,
     primary: {
-      main: '#2196f3',
-      light: '#64b5f6',
-      dark: '#1976d2',
+      main: '#3A86FF',
+      light: '#60A5FA',
+      dark: '#2563EB',
     },
     secondary: {
-      main: '#f50057',
-      light: '#ff4081',
-      dark: '#c51162',
+      main: '#7C3AED',
+      light: '#8B5CF6',
+      dark: '#6D28D9',
     },
     background: {
-      default: mode === 'light' ? '#f5f5f5' : '#121212',
-      paper: mode === 'light' ? '#ffffff' : '#1e1e1e',
+      default: mode === 'light' ? '#F8FAFC' : '#0F172A',
+      paper: mode === 'light' ? '#FFFFFF' : '#1E293B',
+    },
+    text: {
+      primary: mode === 'light' ? '#1E293B' : '#F1F5F9',
+      secondary: mode === 'light' ? '#475569' : '#94A3B8',
     },
   },
   typography: {
@@ -44,6 +48,22 @@ const getTheme = (mode) => createTheme({
           borderRadius: 8,
           textTransform: 'none',
           fontWeight: 500,
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          backgroundImage: 'none',
+        },
+      },
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          background: mode === 'light' 
+            ? 'linear-gradient(90deg, #3A86FF 0%, #7C3AED 100%)'
+            : 'linear-gradient(90deg, #2563EB 0%, #6D28D9 100%)',
         },
       },
     },
