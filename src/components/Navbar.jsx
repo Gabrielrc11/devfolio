@@ -15,13 +15,7 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { useNavigate } from 'react-router-dom';
 import { useThemeContext } from '../theme/ThemeContext';
-
-const pages = [
-  { title: 'Início', path: '/' },
-  { title: 'Projetos', path: '/projetos' },
-  { title: 'Sobre', path: '/sobre' },
-  { title: 'Contato', path: '/contato' },
-];
+import { PAGES } from '../constants/routes';
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -41,10 +35,17 @@ const Navbar = () => {
     handleCloseNavMenu();
   };
 
+  const ThemeToggleButton = () => (
+    <IconButton onClick={toggleTheme} color="inherit">
+      {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+    </IconButton>
+  );
+
   return (
     <AppBar position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+          {/* Logo - Desktop */}
           <Typography
             variant="h6"
             noWrap
@@ -61,9 +62,11 @@ const Navbar = () => {
             Gabriel Carvalho
           </Typography>
 
+          {/* Menu Mobile */}
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
+              aria-label="menu"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
@@ -89,7 +92,7 @@ const Navbar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
+              {PAGES.map((page) => (
                 <MenuItem key={page.path} onClick={() => handleNavigate(page.path)}>
                   <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
@@ -97,19 +100,21 @@ const Navbar = () => {
               <MenuItem onClick={toggleTheme}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                   {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-                  <Typography>{mode === 'dark' ? 'Modo Claro' : 'Modo Escuro'}</Typography>
+                  <Typography>
+                    {mode === 'dark' ? 'Modo Claro' : 'Modo Escuro'}
+                  </Typography>
                 </Box>
               </MenuItem>
             </Menu>
           </Box>
 
+          {/* Logo - Mobile */}
           <Typography
-            variant="h5"
+            variant="h6"
             noWrap
             sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
+              display: { xs: 'flex', md: 'none' },
               fontWeight: 700,
               color: 'inherit',
               textDecoration: 'none',
@@ -120,8 +125,9 @@ const Navbar = () => {
             Gabriel Carvalho
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
-            {pages.map((page) => (
+          {/* Menu Desktop */}
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {PAGES.map((page) => (
               <Button
                 key={page.path}
                 onClick={() => handleNavigate(page.path)}
@@ -130,13 +136,11 @@ const Navbar = () => {
                 {page.title}
               </Button>
             ))}
-            <IconButton
-              sx={{ ml: 2, color: 'white' }}
-              onClick={toggleTheme}
-              aria-label="alternar tema"
-            >
-              {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-            </IconButton>
+          </Box>
+
+          {/* Theme Toggle - Desktop */}
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <ThemeToggleButton />
           </Box>
         </Toolbar>
       </Container>
