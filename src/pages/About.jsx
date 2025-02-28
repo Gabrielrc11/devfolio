@@ -7,7 +7,21 @@ import {
   Divider,
   Chip,
 } from '@mui/material';
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import TimelineDot from '@mui/lab/TimelineDot';
 import { motion } from 'framer-motion';
+import SchoolIcon from '@mui/icons-material/School';
+import CodeIcon from '@mui/icons-material/Code';
+import StorageIcon from '@mui/icons-material/Storage';
+import DeveloperModeIcon from '@mui/icons-material/DeveloperMode';
+import JavascriptIcon from '@mui/icons-material/Javascript';
+import WebIcon from '@mui/icons-material/Web';
+import DataObjectIcon from '@mui/icons-material/DataObject';
+import TerminalIcon from '@mui/icons-material/Terminal';
 
 const skills = [
   {
@@ -98,10 +112,29 @@ const experiences = [
   }
 ];
 
+const education = [
+  {
+    course: 'Bacharelado em Ciências e Tecnologia',
+    institution: 'Universidade Federal do Rio Grande do Norte',
+    period: 'Setembro 2024 - Presente'
+  },
+  {
+    course: 'Técnico em Informática para Internet',
+    institution: 'Instituto Metrópole Digital',
+    period: 'Março 2022 - Janeiro 2025'
+  },
+  {
+    course: 'Técnico em Informática',
+    institution: 'Escola Agricola de Jundiai | UFRN',
+    period: 'Março 2021 - Dezembro 2023'
+  }
+];
+
 const About = () => {
   return (
     <Container sx={{ py: 8 }}>
       <Grid container spacing={6}>
+        {/* Seção Sobre Mim */}
         <Grid item xs={12} md={6}>
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -112,7 +145,7 @@ const About = () => {
               Sobre Mim
             </Typography>
             <Typography variant="body1" paragraph>
-            Sou Gabriel Henrique Rocha de Carvalho, Desenvolvedor Fullstack com experiência em Inteligência Artificial, Análise de Dados e estudante do Bacharelado em Ciências e Tecnologia na Universidade Federal do Rio Grande do Norte. Minha paixão por tecnologia e criatividade me impulsiona a buscar soluções inovadoras e entregar projetos de alta qualidade.
+              Sou Gabriel Henrique Rocha de Carvalho, Desenvolvedor Fullstack com experiência em Inteligência Artificial, Análise de Dados e estudante do Bacharelado em Ciências e Tecnologia na Universidade Federal do Rio Grande do Norte. Minha paixão por tecnologia e criatividade me impulsiona a buscar soluções inovadoras e entregar projetos de alta qualidade.
             </Typography>
             <Typography variant="body1" paragraph>
               Minha jornada na programação começou durante meu ensino médio técnico, e desde
@@ -123,6 +156,7 @@ const About = () => {
           </motion.div>
         </Grid>
 
+        {/* Seção Tecnologias & Ferramentas */}
         <Grid item xs={12} md={6}>
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -172,9 +206,13 @@ const About = () => {
 
         <Grid item xs={12}>
           <Divider sx={{ my: 4 }} />
+        </Grid>
+
+        {/* Seção Experiência Profissional */}
+        <Grid item xs={12} md={7}>
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
             <Typography variant="h4" gutterBottom>
@@ -221,6 +259,63 @@ const About = () => {
                 </Grid>
               ))}
             </Grid>
+          </motion.div>
+        </Grid>
+
+        {/* Seção Formação Acadêmica */}
+        <Grid item xs={12} md={5}>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            style={{ height: '100%' }}
+          >
+            <Typography variant="h4" gutterBottom>
+              Formação Acadêmica
+            </Typography>
+            <Timeline
+              sx={{
+                height: '100%',
+                [`& .MuiTimelineItem-root:before`]: {
+                  flex: 0,
+                },
+                p: 0,
+              }}
+            >
+              {education.map((edu, index) => (
+                <TimelineItem key={index}>
+                  <TimelineSeparator>
+                    <TimelineDot color="primary">
+                      <SchoolIcon />
+                    </TimelineDot>
+                    {index < education.length - 1 && <TimelineConnector />}
+                  </TimelineSeparator>
+                  <TimelineContent sx={{ py: '12px', px: 2 }}>
+                    <Paper
+                      elevation={2}
+                      sx={{
+                        p: 3,
+                        mb: 2,
+                        '&:hover': {
+                          transform: 'translateY(-4px)',
+                          transition: 'transform 0.3s'
+                        }
+                      }}
+                    >
+                      <Typography variant="h6" component="h3">
+                        {edu.course}
+                      </Typography>
+                      <Typography color="primary">
+                        {edu.institution}
+                      </Typography>
+                      <Typography color="text.secondary" variant="subtitle2">
+                        {edu.period}
+                      </Typography>
+                    </Paper>
+                  </TimelineContent>
+                </TimelineItem>
+              ))}
+            </Timeline>
           </motion.div>
         </Grid>
       </Grid>
