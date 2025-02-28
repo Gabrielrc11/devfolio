@@ -66,8 +66,10 @@ const Home = () => {
             <Box
               sx={{
                 display: 'flex',
-                justifyContent: 'flex-end',
+                justifyContent: { xs: 'center', md: 'flex-end' },
+                alignItems: 'center',
                 width: '100%',
+                height: '100%',
               }}
             >
               <Box
@@ -76,10 +78,11 @@ const Home = () => {
                 alt="Desenvolvedor"
                 sx={{
                   width: '100%',
-                  maxWidth: 250,
+                  maxWidth: { xs: 200, md: 250 },
                   height: 'auto',
                   borderRadius: 2,
                   boxShadow: 3,
+                  mb: { xs: 4, md: 0 },
                 }}
               />
             </Box>
