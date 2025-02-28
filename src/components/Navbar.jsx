@@ -107,7 +107,7 @@ const Navbar = () => {
             }}
             onClick={() => navigate('/')}
           >
-            DevFolio
+            Gabriel Carvalho
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
