@@ -1,12 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import theme from './theme/theme';
-import Navbar from './components/Navbar';
-
-// Importação preguiçosa das páginas
+import { BrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import { CircularProgress, Box } from '@mui/material';
+import { Box, CircularProgress, CssBaseline } from '@mui/material';
+import Navbar from './components/Navbar';
 
 const Home = lazy(() => import('./pages/Home'));
 const Projects = lazy(() => import('./pages/Projects'));
@@ -26,9 +22,9 @@ const LoadingFallback = () => (
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <CssBaseline />
-      <Router>
+      <BrowserRouter>
         <Navbar />
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
@@ -38,8 +34,8 @@ function App() {
             <Route path="/contato" element={<Contact />} />
           </Routes>
         </Suspense>
-      </Router>
-    </ThemeProvider>
+      </BrowserRouter>
+    </>
   );
 }
 

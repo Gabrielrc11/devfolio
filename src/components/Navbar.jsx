@@ -11,7 +11,10 @@ import {
   MenuItem,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { useNavigate } from 'react-router-dom';
+import { useThemeContext } from '../theme/ThemeContext';
 
 const pages = [
   { title: 'Início', path: '/' },
@@ -23,6 +26,7 @@ const pages = [
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const navigate = useNavigate();
+  const { mode, toggleTheme } = useThemeContext();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -120,6 +124,13 @@ const Navbar = () => {
                 {page.title}
               </Button>
             ))}
+            <IconButton
+              sx={{ ml: 2, color: 'white' }}
+              onClick={toggleTheme}
+              aria-label="alternar tema"
+            >
+              {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+            </IconButton>
           </Box>
         </Toolbar>
       </Container>
