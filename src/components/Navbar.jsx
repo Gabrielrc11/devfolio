@@ -94,6 +94,12 @@ const Navbar = () => {
                   <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
               ))}
+              <MenuItem onClick={toggleTheme}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+                  <Typography>{mode === 'dark' ? 'Modo Claro' : 'Modo Escuro'}</Typography>
+                </Box>
+              </MenuItem>
             </Menu>
           </Box>
 
