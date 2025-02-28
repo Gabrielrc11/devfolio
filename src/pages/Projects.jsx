@@ -15,13 +15,14 @@ import { motion } from 'framer-motion';
 import rdImage from '../assets/rd.png';
 import mwImage from '../assets/mw.png';
 import svImage from '../assets/sv.png';
+import dvImage from '../assets/devfolio.png';
 
 const projects = [
   {
     id: 1,
     title: 'Devfolio',
     description: 'Devfolio desenvolvido para apresentar meus projetos e minhas habilidades como desenvolvedor.',
-    image: '/project1.jpg',
+    image: dvImage,
     technologies: ['React', 'MUI', 'JavaScript'],
     githubUrl: 'https://github.com/Gabrielrc11/devfolio',
   },
