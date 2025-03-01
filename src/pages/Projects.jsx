@@ -23,7 +23,7 @@ const projects = [
     title: 'Devfolio',
     description: 'Devfolio desenvolvido para apresentar meus projetos e minhas habilidades como desenvolvedor.',
     image: dvImage,
-    technologies: ['React', 'MUI', 'JavaScript'],
+    technologies: ['React', 'Vite', 'MUI', 'JavaScript'],
     githubUrl: 'https://github.com/Gabrielrc11/devfolio',
   },
   {
