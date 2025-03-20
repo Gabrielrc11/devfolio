@@ -16,6 +16,7 @@ import rdImage from '../assets/rd.png';
 import mwImage from '../assets/mw.png';
 import svImage from '../assets/sv.png';
 import dvImage from '../assets/devfolio.png';
+import vdImage from '../assets/vd.png';
 
 const projects = [
   {
@@ -28,6 +29,15 @@ const projects = [
   },
   {
     id: 2,
+    title: 'Versículo Diário',
+    description: 'Uma aplicação React que mostra um versículo bíblico aleatório todos os dias.',
+    image: vdImage,
+    technologies: ['React', 'Vite', 'MUI', 'JavaScript'],
+    githubUrl: 'https://github.com/Gabrielrc11/versiculo_diario',
+    liveUrl: 'https://versiculo-diario.vercel.app/',
+  },
+  {
+    id: 3,
     title: 'RD Facilities',
     description: 'Meu primeiro projeto como freelancer, um sistema de gerenciamento de condomínios.',
     image: rdImage,
@@ -36,7 +46,7 @@ const projects = [
     liveUrl: 'https://rd-facilities.vercel.app/',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Desafio MW Soluções',
     description: 'Desafio desenvolvido para a empresa MW Soluções, um sistema de monitoramento de dados.',
     image: mwImage,
@@ -44,7 +54,7 @@ const projects = [
     githubUrl: 'https://github.com/Gabrielrc11/mw_desafio',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Sunrise Village',
     description: 'Jogo RPG desenvolvido para evoluir minhas habilidades com desenvolvimento de jogos.',
     image: svImage,
