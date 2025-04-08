@@ -13,9 +13,11 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
+import DownloadIcon from '@mui/icons-material/Download';
 import { useNavigate } from 'react-router-dom';
 import { useThemeContext } from '../theme/ThemeContext';
 import { PAGES } from '../constants/routes';
+import curriculo from '../assets/Curriculo.pdf';
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -33,6 +35,10 @@ const Navbar = () => {
   const handleNavigate = (path) => {
     navigate(path);
     handleCloseNavMenu();
+  };
+
+  const handleDownloadCV = () => {
+    window.open(curriculo, '_blank');
   };
 
   const ThemeToggleButton = () => (
@@ -97,6 +103,13 @@ const Navbar = () => {
                   <Typography textAlign="center">{page.title}</Typography>
                 </MenuItem>
               ))}
+              {/* Download CV Button - Mobile */}
+              <MenuItem onClick={handleDownloadCV}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <DownloadIcon />
+                  <Typography>Baixar Currículo</Typography>
+                </Box>
+              </MenuItem>
               <MenuItem onClick={toggleTheme}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                   {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
@@ -136,6 +149,19 @@ const Navbar = () => {
                 {page.title}
               </Button>
             ))}
+          </Box>
+
+          {/* Download CV Button - Desktop */}
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 2 }}>
+            <Button
+              variant="outlined"
+              color="inherit"
+              startIcon={<DownloadIcon />}
+              onClick={handleDownloadCV}
+              sx={{ borderRadius: 2 }}
+            >
+              Currículo
+            </Button>
           </Box>
 
           {/* Theme Toggle - Desktop */}
