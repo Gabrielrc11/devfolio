@@ -85,7 +85,7 @@ const experiences = [
   {
     company: 'ChatADV',
     position: 'Desenvolvedor Full Stack Junior', 
-    period: 'Março 2025 - Presente',
+    period: 'Março 2025 - Abril 2025',
     description: 'Desenvolvimento e manutenção do sistema Web ChatADV, um sistema de IA para área jurídica brasileira.',
     technologies: ['React', 'Laravel', 'Python', 'JavaScript', 'PHP', 'Docker', 'Git']
   },
