@@ -14,7 +14,6 @@ import { GitHub, Launch } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import rdImage from '../assets/rd.png';
 import mwImage from '../assets/mw.png';
-import svImage from '../assets/sv.png';
 import dvImage from '../assets/devfolio.png';
 import vdImage from '../assets/vd.png';
 
@@ -52,14 +51,6 @@ const projects = [
     image: mwImage,
     technologies: ['Python'],
     githubUrl: 'https://github.com/Gabrielrc11/mw_desafio',
-  },
-  {
-    id: 5,
-    title: 'Sunrise Village',
-    description: 'Jogo RPG desenvolvido para evoluir minhas habilidades com desenvolvimento de jogos.',
-    image: svImage,
-    technologies: ['C#', 'Unity'],
-    githubUrl: 'https://github.com/Gabrielrc11/sunrise_village',
   },
 ];
 
